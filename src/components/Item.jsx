@@ -65,7 +65,7 @@ export default function Item({ item, remove, primary, comment }) {
           {item?.user?.name && (
             <Box
               onClick={(e) => {
-                navigate(`/profile/${item.user.id}`);
+                auth && navigate(`/profile/${item.user.id}`);
                 e.stopPropagation();
               }}
               sx={{
@@ -73,7 +73,7 @@ export default function Item({ item, remove, primary, comment }) {
                 flexDirection: "row",
                 alignItems: "center",
                 gap: 1,
-                cursor: "pointer",
+                cursor: auth && "pointer",
               }}
             >
               <UserIcon fontSize="12" color="info" />
