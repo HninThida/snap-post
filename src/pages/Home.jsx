@@ -76,7 +76,18 @@ export default function Home() {
     );
   }
   if (isLoading) {
-    return <Box sx={{ textAlign: "center" }}>Loading ...</Box>;
+    return (
+      <Box
+        sx={{
+          textAlign: "center",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        Loading ...
+      </Box>
+    );
   }
 
   return (

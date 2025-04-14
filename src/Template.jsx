@@ -12,7 +12,7 @@ export default function Template() {
     <Box>
       <Header />
       <AppDrawer />
-      <Container maxWidth="sm" sx={{ mt: 4 }}>
+      <Container maxWidth="sm" sx={{ mt: 4, height: "1000vh" }}>
         <Outlet />
       </Container>
       <Snackbar
