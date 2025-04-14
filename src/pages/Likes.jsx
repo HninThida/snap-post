@@ -6,8 +6,6 @@ import { fetchCommentLikes, fetchPostLikes } from "../libs/fetcher";
 
 export default function Likes() {
   const { id, type } = useParams();
-  console.log(type);
-
   const { isLoading, isError, error, data } = useQuery({
     queryKey: ["users", id, type],
     queryFn: () => {

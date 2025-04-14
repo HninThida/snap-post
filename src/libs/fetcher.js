@@ -133,8 +133,6 @@ export async function fetchPostLikes(id) {
   return res.json();
 }
 export async function fetchCommentLikes(id) {
-  console.log(id);
-
   const res = await fetch(`${api}/content/likes/comments/${id}`);
   return res.json();
 }

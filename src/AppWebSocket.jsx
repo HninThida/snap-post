@@ -11,20 +11,16 @@ export default function AppSocket() {
       reconnectInterval: 3000,
     }
   );
-  {
-    console.log(readyState);
-  }
+  
   useEffect(() => {
     if (auth && readyState === ReadyState.OPEN) {
       sendJsonMessage({
         token: localStorage.getItem("token"),
       });
-      console.log("WS: connection ready & token sent");
     }
   }, [readyState, auth, sendJsonMessage]);
 
   useEffect(() => {
-    console.log("WS: new message received");
     if (lastJsonMessage && lastJsonMessage.event) {
       queryClient.invalidateQueries(["notis", lastJsonMessage.event]);
     }

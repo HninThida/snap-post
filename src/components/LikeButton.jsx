@@ -83,7 +83,9 @@ export default function LikeButton({ item, comment }) {
       )}
       <Button
         disabled={
-          comment ? item?.commentLike.length === 0 : item.postLike.length === 0
+          comment
+            ? item?.commentLike?.length === 0
+            : item.postLike?.length === 0
         }
         onClick={(e) => {
           if (comment) {

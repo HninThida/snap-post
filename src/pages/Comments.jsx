@@ -8,7 +8,7 @@ import { createComment, getToken } from "../libs/fetcher";
 
 export default function Comments() {
   const { id } = useParams();
-  const { setGlobalMsg } = useApp();
+  const { setGlobalMsg, auth } = useApp();
   const contentRef = useRef();
   const navigate = useNavigate();
 
@@ -117,8 +117,13 @@ export default function Comments() {
                 multiline
                 placeholder="Your Comment"
                 inputRef={contentRef}
+                disabled={auth ? false : true}
               />
-              <Button type="submit" variant="contained">
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={auth ? false : true}
+              >
                 Reply
               </Button>
             </Box>

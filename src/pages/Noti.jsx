@@ -51,9 +51,7 @@ export default function Notis() {
   if (isLoading) {
     return <Box sx={{ textAlign: "center" }}>Loading...</Box>;
   }
-  {
-    console.log(data);
-  }
+
   return (
     <Box>
       <Box sx={{ display: "flex", mb: 2 }}>
@@ -75,8 +73,6 @@ export default function Notis() {
           <Card sx={{ mb: 2, opacity: noti.read ? 0.3 : 1 }} key={noti.id}>
             <CardActionArea
               onClick={() => {
-                console.log(noti.id);
-
                 readNoti.mutate(noti.id);
                 navigate(`/comments/${noti.postId}`);
               }}
