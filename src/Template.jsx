@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { useApp } from "./ThemedApp";
 import Header from "./components/Headers";
 import AppDrawer from "./components/AppDrawers";
+import Footer from "./components/Footer";
 
 export default function Template() {
   const { globalMsg, setGlobalMsg } = useApp();
@@ -14,7 +15,6 @@ export default function Template() {
       <Container maxWidth="sm" sx={{ mt: 4 }}>
         <Outlet />
       </Container>
-
       <Snackbar
         anchorOrigin={{
           horizontal: "center",
@@ -25,6 +25,7 @@ export default function Template() {
         onClose={() => setGlobalMsg(null)}
         message={globalMsg}
       />
+      <Footer />
     </Box>
   );
 }

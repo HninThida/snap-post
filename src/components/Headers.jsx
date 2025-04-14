@@ -43,8 +43,7 @@ export default function Header() {
     if (isLoading || isError) return 0;
     return data.filter((noti) => !noti.read).length;
   }
-  notiCount();
-  console.log(currentPath);
+  auth !== null && notiCount();
 
   return (
     <AppBar position="static">
@@ -63,7 +62,7 @@ export default function Header() {
             navigate("/");
           }}
         >
-          Yaycha
+          SnapPost
         </Typography>
 
         <Box>
