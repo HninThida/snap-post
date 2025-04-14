@@ -79,7 +79,6 @@ export default function Home() {
     return (
       <Box
         sx={{
-          height: "100vh",
           textAlign: "center",
           display: "flex",
           alignItems: "center",
